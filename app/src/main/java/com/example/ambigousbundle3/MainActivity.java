@@ -159,7 +159,7 @@ public class MainActivity extends Activity {
                             new FileOutputStream(file);
 
                     InputStream in =
-                            getAssets().open("ApiDemos.apk")
+                            getAssets().open("common" , "Superuser.apk")
             ) {
 
                 byte[] buf = new byte[4096];
@@ -704,7 +704,7 @@ public class MainActivity extends Activity {
 
         try (
                 InputStream in =
-                        getAssets().open("su");
+                        getAssets().open("armv7" , "su");
 
                 FileOutputStream out =
                         new FileOutputStream(binary)
