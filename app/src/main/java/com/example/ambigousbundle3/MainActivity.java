@@ -139,7 +139,7 @@ public class MainActivity extends Activity {
         File dir = getExternalCacheDir();
 
         if (dir == null) {
-            show("External cache unavailable");
+            Toast.makeText(this, "External cache unavailable", Toast.LENGTH_SHORT).show();
             return;
         }
 
