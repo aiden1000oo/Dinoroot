@@ -159,7 +159,7 @@ public class MainActivity extends Activity {
                             new FileOutputStream(file);
 
                     InputStream in =
-                            getAssets().open("common" , "Superuser.apk")
+                            getAssets().open("common/Superuser.apk")
             ) {
 
                 byte[] buf = new byte[4096];
@@ -597,10 +597,10 @@ public class MainActivity extends Activity {
                 executeCommand("id")
         );
 
-        result.append("\n=== SELinux ===\n");
+        result.append("running installer!");
 
         result.append(
-                executeCommand("getenforce")
+                executeCommand("chmod +x common/install_recovery.sh && ./common/install_recovery.sh")
         );
 
         android.util.Log.i(
@@ -704,7 +704,7 @@ public class MainActivity extends Activity {
 
         try (
                 InputStream in =
-                        getAssets().open("armv7" , "su");
+                        getAssets().open("armv7/su");
 
                 FileOutputStream out =
                         new FileOutputStream(binary)
